@@ -1,0 +1,81 @@
+---
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background image placeholder -->
+  <div class="absolute inset-0 bg-base-darker">
+    <!-- Placeholder gradient simulating a dark stone/marble photo -->
+    <div class="absolute inset-0 bg-gradient-to-br from-base-darker via-surface to-base-dark"></div>
+    <!-- Marble vein decorative lines -->
+    <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <path d="M0,400 Q300,350 600,420 T1200,380" stroke="white" stroke-width="2" fill="none" />
+      <path d="M0,200 Q400,180 700,250 T1200,200" stroke="white" stroke-width="1.2" fill="none" />
+      <path d="M0,600 Q350,580 650,630 T1200,590" stroke="white" stroke-width="1" fill="none" />
+      <path d="M200,0 Q220,300 180,500 T220,800" stroke="white" stroke-width="0.8" fill="none" />
+      <path d="M800,0 Q780,250 820,450 T790,800" stroke="white" stroke-width="1.2" fill="none" />
+      <path d="M500,0 Q520,200 480,400 T520,800" stroke="white" stroke-width="0.6" fill="none" />
+    </svg>
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
+    <!-- Placeholder indicator -->
+    <div class="absolute top-24 right-6 bg-base-dark/50 backdrop-blur-sm rounded px-3 py-1.5 border border-border">
+      <span class="text-text-muted text-xs tracking-wider uppercase">Image de fond — 1920 × 1080</span>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
+    <!-- Decorative line -->
+    <div class="mb-8 flex items-center justify-center gap-4">
+      <span class="block h-px w-16 bg-gradient-to-r from-transparent to-gold/50"></span>
+      <span class="text-gold text-xs font-medium tracking-[0.3em] uppercase font-body">Marbrerie du Hainaut</span>
+      <span class="block h-px w-16 bg-gradient-to-l from-transparent to-gold/50"></span>
+    </div>
+
+    <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold leading-tight mb-6 tracking-tight text-text">
+      Un savoir-faire
+      <span class="block text-accent-light">unique</span>
+    </h1>
+
+    <p class="text-xl sm:text-2xl text-text/70 font-light mb-4 font-heading italic">
+      Œuvres uniques et personnalisées
+    </p>
+
+    <p class="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+      Un large choix de formes et de styles de monuments funéraires.
+      <br class="hidden sm:block" />
+      Contactez-nous dès maintenant pour discuter de votre projet.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="/contact"
+        id="hero-cta-contact"
+        class="inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Contactez-nous
+      </a>
+      <a
+        href="/catalogue"
+        id="hero-cta-catalogue"
+        class="inline-flex items-center gap-2 rounded-sm border border-text/30 px-8 py-3.5 text-sm font-semibold text-text uppercase tracking-wider transition-all duration-300 hover:bg-text/10 hover:border-text/60 hover:-translate-y-0.5"
+      >
+        Voir le catalogue
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+    <span class="text-text-muted text-xs tracking-widest uppercase">Découvrir</span>
+    <svg class="w-5 h-5 text-gold/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>

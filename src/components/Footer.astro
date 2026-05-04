@@ -1,0 +1,98 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="footer" class="relative bg-base-darker border-t border-border">
+  <!-- Main footer -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <a href="/" class="inline-block mb-4">
+          <img src="/logo.png" alt="Marbrerie du Hainaut" class="h-14 w-auto" />
+        </a>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Un savoir-faire unique au service de vos monuments funéraires. Artisans marbriers professionnels et expérimentés.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="font-heading text-lg font-semibold text-text mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-accent"></span>
+          Navigation
+        </h4>
+        <ul class="space-y-3">
+          <li><a href="/" class="text-text-muted text-sm hover:text-gold transition-colors duration-300">Présentation</a></li>
+          <li><a href="/caveau" class="text-text-muted text-sm hover:text-gold transition-colors duration-300">Services monuments</a></li>
+          <li><a href="/cavurne" class="text-text-muted text-sm hover:text-gold transition-colors duration-300">Services cavurnes</a></li>
+          <li><a href="/reparation" class="text-text-muted text-sm hover:text-gold transition-colors duration-300">Réparation</a></li>
+          <li><a href="/catalogue" class="text-text-muted text-sm hover:text-gold transition-colors duration-300">Catalogue</a></li>
+          <li><a href="/contact" class="text-text-muted text-sm hover:text-gold transition-colors duration-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h4 class="font-heading text-lg font-semibold text-text mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-accent"></span>
+          Horaires
+        </h4>
+        <ul class="space-y-3 text-text-muted text-sm">
+          <li class="flex justify-between">
+            <span>Lundi – Vendredi</span>
+            <span class="text-text">8h00 – 18h00</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Samedi – Dimanche</span>
+            <span class="text-accent-light">Fermé</span>
+          </li>
+          <li class="pt-2 border-t border-border">
+            <span class="text-gold text-xs font-medium tracking-wider uppercase">Sur rendez-vous uniquement</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-heading text-lg font-semibold text-text mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-accent"></span>
+          Contact
+        </h4>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <p class="text-text-muted leading-relaxed">
+              Parc d'activités du Saubois<br />
+              1M rue du Savoir Faire<br />
+              59230 Saint-Amand-les-Eaux
+            </p>
+          </li>
+          <li>
+            <a href="tel:0362020950" class="text-gold hover:text-gold-light transition-colors duration-300 font-medium">
+              03 62 02 09 50
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@marbrerieduhainaut.fr" class="text-gold hover:text-gold-light transition-colors duration-300 font-medium">
+              contact@marbrerieduhainaut.fr
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-text-muted text-xs">
+        © {currentYear} Marbrerie du Hainaut. Tous droits réservés.
+      </p>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="/mentions-legales" class="text-text-muted hover:text-gold transition-colors duration-300">Mentions légales</a>
+        <span class="text-border">|</span>
+        <a href="/politique-de-confidentialite" class="text-text-muted hover:text-gold transition-colors duration-300">RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>

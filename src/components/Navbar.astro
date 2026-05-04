@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-base-darker/95 backdrop-blur-xl shadow-lg shadow-black/10 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0" id="nav-logo">
+        <img src="/logo.png" alt="Marbrerie du Hainaut" class="h-12 w-auto" />
+      </a>
+
+      <!-- Navigation desktop -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="/" class="text-text/80 hover:text-gold text-sm font-medium tracking-wide uppercase transition-colors duration-300">Présentation</a>
+        <a href="/caveau" class="text-text/80 hover:text-gold text-sm font-medium tracking-wide uppercase transition-colors duration-300">Monuments</a>
+        <a href="/cavurne" class="text-text/80 hover:text-gold text-sm font-medium tracking-wide uppercase transition-colors duration-300">Cavurnes</a>
+        <a href="/reparation" class="text-text/80 hover:text-gold text-sm font-medium tracking-wide uppercase transition-colors duration-300">Réparation</a>
+        <a href="/catalogue" class="text-text/80 hover:text-gold text-sm font-medium tracking-wide uppercase transition-colors duration-300">Catalogue</a>
+        <a href="/contact" class="text-text/80 hover:text-gold text-sm font-medium tracking-wide uppercase transition-colors duration-300">Contact</a>
+      </div>
+
+      <!-- CTA desktop -->
+      <div class="hidden lg:block">
+        <a
+          href="/devis"
+          id="nav-cta"
+          class="inline-flex items-center gap-2 rounded-sm bg-accent px-5 py-2.5 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20"
+        >
+          Demande de devis
+        </a>
+      </div>
+
+      <!-- Hamburger mobile -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Ouvrir le menu"
+      >
+        <span class="block h-0.5 w-6 bg-text transition-all duration-300" id="burger-1"></span>
+        <span class="block h-0.5 w-6 bg-text transition-all duration-300" id="burger-2"></span>
+        <span class="block h-0.5 w-6 bg-text transition-all duration-300" id="burger-3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-base-darker/95 backdrop-blur-xl border-t border-border">
+    <div class="px-6 py-6 flex flex-col gap-4">
+      <a href="/" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Présentation</a>
+      <a href="/caveau" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Monuments</a>
+      <a href="/cavurne" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Cavurnes</a>
+      <a href="/reparation" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Réparation</a>
+      <a href="/catalogue" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Catalogue</a>
+      <a href="/contact" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Contact</a>
+      <a
+        href="/devis"
+        class="mt-2 inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light"
+      >
+        Demande de devis
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const b1 = document.getElementById('burger-1');
+  const b2 = document.getElementById('burger-2');
+  const b3 = document.getElementById('burger-3');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    if (isOpen) {
+      menu?.classList.add('hidden');
+      b1?.classList.remove('rotate-45', 'translate-y-2');
+      b2?.classList.remove('opacity-0');
+      b3?.classList.remove('-rotate-45', '-translate-y-2');
+    } else {
+      menu?.classList.remove('hidden');
+      b1?.classList.add('rotate-45', 'translate-y-2');
+      b2?.classList.add('opacity-0');
+      b3?.classList.add('-rotate-45', '-translate-y-2');
+    }
+  });
+</script>

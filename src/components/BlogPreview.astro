@@ -1,0 +1,74 @@
+---
+const articles = [
+  {
+    title: "Que faire graver sur un édifice funéraire ?",
+    excerpt: "Les gravures sur un monument funéraire sont toujours sélectionnées pour des raisons bien particulières. Ces gravures sont destinées d'abord à inscrire les informations sur le défunt pour son identification…",
+    link: "/que-faire-graver-sur-un-edifice-funeraire"
+  },
+  {
+    title: "La mission d'un marbrier funéraire",
+    excerpt: "Il ne faut pas se méprendre, le rôle du marbrier ne s'arrête pas à la seule fonction de conception. Il faut entendre le métier d'une manière beaucoup plus large…",
+    link: "/la-mission-dun-marbrier-funeraire"
+  },
+  {
+    title: "Les gravures destinées au monument funéraire",
+    excerpt: "Quand un être vient à nous quitter, nombreux sont les sentiments qui se mêlent : la peine, la douleur, le manque et l'amour. Trouver les bons mots peut vite devenir chose difficile…",
+    link: "/les-gravures-destinees-au-monument-funeraire"
+  }
+];
+---
+
+<section id="blog" class="relative py-24 sm:py-32 bg-light-alt overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16 reveal">
+      <span class="text-accent text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">Notre blog</span>
+      <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-text">
+        Informations et <span class="text-accent">conseils</span>
+      </h2>
+    </div>
+
+    <!-- Articles grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {articles.map((article, index) => (
+        <article class="reveal group" style={`transition-delay: ${index * 0.15}s`}>
+          <a href={article.link} class="block h-full">
+            <div class="h-full bg-light-surface border border-border-light rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1">
+              <!-- Image placeholder -->
+              <div class="w-full h-[220px] bg-gradient-to-br from-base-darker via-surface to-base-dark relative overflow-hidden">
+                <!-- Marble vein decoration -->
+                <svg class="absolute inset-0 w-full h-full opacity-[0.05]" viewBox="0 0 380 220" preserveAspectRatio="none">
+                  <path d="M0,110 Q95,90 190,120 T380,100" stroke="white" stroke-width="1" fill="none" />
+                  <path d="M0,60 Q120,50 240,70 T380,55" stroke="white" stroke-width="0.7" fill="none" />
+                </svg>
+                <!-- Placeholder icon -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-text-muted/40">
+                  <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                  </svg>
+                  <span class="text-xs mt-2 tracking-wider uppercase">380 × 220</span>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <h3 class="font-heading text-lg font-semibold text-dark-text mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                  {article.title}
+                </h3>
+                <p class="text-dark-text-muted text-sm leading-relaxed mb-4 line-clamp-3">
+                  {article.excerpt}
+                </p>
+                <span class="inline-flex items-center gap-1.5 text-accent text-xs font-semibold tracking-wider uppercase transition-all duration-300 group-hover:gap-2.5">
+                  En savoir plus
+                  <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
