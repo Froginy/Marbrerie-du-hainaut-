@@ -18,13 +18,13 @@
     <!-- Dark overlay for readability -->
     <div class="absolute inset-0 bg-gradient-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
     <!-- Placeholder indicator -->
-    <div class="absolute top-24 right-6 bg-base-dark/50 backdrop-blur-sm rounded px-3 py-1.5 border border-border">
+    <div class="absolute top-24 right-6 bg-base-dark/50 backdrop-blur-sm rounded px-3 py-1.5 border border-border z-20">
       <span class="text-text-muted text-xs tracking-wider uppercase">Image de fond — 1920 × 1080</span>
     </div>
   </div>
 
-  <!-- Content -->
-  <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
+  <!-- Content (above 3D) -->
+  <div class="relative z-10 mx-auto max-w-4xl px-4 text-center pointer-events-none">
     <!-- Decorative line -->
     <div class="mb-8 flex items-center justify-center gap-4">
       <span class="block h-px w-16 bg-gradient-to-r from-transparent to-gold/50"></span>
@@ -32,22 +32,22 @@
       <span class="block h-px w-16 bg-gradient-to-l from-transparent to-gold/50"></span>
     </div>
 
-    <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold leading-tight mb-6 tracking-tight text-text">
+    <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold leading-tight mb-6 tracking-tight text-text drop-shadow-lg">
       Un savoir-faire
       <span class="block text-accent-light">unique</span>
     </h1>
 
-    <p class="text-xl sm:text-2xl text-text/70 font-light mb-4 font-heading italic">
+    <p class="text-xl sm:text-2xl text-text/70 font-light mb-4 font-heading italic drop-shadow-md">
       Œuvres uniques et personnalisées
     </p>
 
-    <p class="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+    <p class="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
       Un large choix de formes et de styles de monuments funéraires.
       <br class="hidden sm:block" />
       Contactez-nous dès maintenant pour discuter de votre projet.
     </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
       <a
         href="/contact"
         id="hero-cta-contact"
@@ -72,10 +72,11 @@
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-    <span class="text-text-muted text-xs tracking-widest uppercase">Découvrir</span>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce z-10">
+    <span class="text-text-muted text-xs tracking-widest uppercase drop-shadow-md">Découvrir</span>
     <svg class="w-5 h-5 text-gold/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
     </svg>
   </div>
+
 </section>
