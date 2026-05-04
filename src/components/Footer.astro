@@ -4,10 +4,10 @@ const currentYear = new Date().getFullYear();
 
 <footer id="footer" class="relative bg-base-darker border-t border-border">
   <!-- Main footer -->
-  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
       <!-- Brand -->
-      <div class="lg:col-span-1">
+      <div class="col-span-2 lg:col-span-1">
         <a href="/" class="inline-block mb-4">
           <img src="/logo.png" alt="Marbrerie du Hainaut" class="h-14 w-auto" />
         </a>
@@ -17,8 +17,8 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Navigation -->
-      <div>
-        <h4 class="font-heading text-lg font-semibold text-text mb-5 flex items-center gap-2">
+      <div class="col-span-1">
+        <h4 class="font-heading text-base sm:text-lg font-semibold text-text mb-4 sm:mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-accent"></span>
           Navigation
         </h4>
@@ -33,17 +33,17 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Hours -->
-      <div>
-        <h4 class="font-heading text-lg font-semibold text-text mb-5 flex items-center gap-2">
+      <div class="col-span-1">
+        <h4 class="font-heading text-base sm:text-lg font-semibold text-text mb-4 sm:mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-accent"></span>
           Horaires
         </h4>
-        <ul class="space-y-3 text-text-muted text-sm">
-          <li class="flex justify-between">
+        <ul class="space-y-3 text-text-muted text-xs sm:text-sm">
+          <li class="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-0">
             <span>Lundi – Vendredi</span>
             <span class="text-text">8h00 – 18h00</span>
           </li>
-          <li class="flex justify-between">
+          <li class="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-0">
             <span>Samedi – Dimanche</span>
             <span class="text-accent-light">Fermé</span>
           </li>
@@ -54,8 +54,8 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Contact -->
-      <div>
-        <h4 class="font-heading text-lg font-semibold text-text mb-5 flex items-center gap-2">
+      <div class="col-span-2 lg:col-span-1">
+        <h4 class="font-heading text-base sm:text-lg font-semibold text-text mb-4 sm:mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-accent"></span>
           Contact
         </h4>

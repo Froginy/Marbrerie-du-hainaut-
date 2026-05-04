@@ -23,11 +23,11 @@ import '../styles/global.css';
       <!-- CTA desktop -->
       <div class="hidden lg:block">
         <a
-          href="/devis"
-          id="nav-cta"
+          href="/conception-3d"
+          id="link-configurateur-nav"
           class="inline-flex items-center gap-2 rounded-sm bg-accent px-5 py-2.5 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20"
         >
-          Demande de devis
+          Créer votre projet
         </a>
       </div>
 
@@ -54,10 +54,11 @@ import '../styles/global.css';
       <a href="/catalogue" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Catalogue</a>
       <a href="/contact" class="text-text/80 hover:text-gold text-base font-medium tracking-wide uppercase transition-colors duration-300 py-2">Contact</a>
       <a
-        href="/devis"
+        href="/conception-3d"
+        id="link-configurateur-mobile"
         class="mt-2 inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light"
       >
-        Demande de devis
+        Créer votre projet
       </a>
     </div>
   </div>
@@ -85,4 +86,26 @@ import '../styles/global.css';
       b3?.classList.add('-rotate-45', '-translate-y-2');
     }
   });
+
+  // Smart Header (Hide on scroll down, show on scroll up)
+  const nav = document.getElementById('main-nav');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    // Don't hide if the mobile menu is open
+    const isMenuOpen = !menu?.classList.contains('hidden');
+    if (isMenuOpen) return;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down & past 100px: hide navbar
+      nav?.classList.add('-translate-y-full');
+    } else {
+      // Scrolling up or at top: show navbar
+      nav?.classList.remove('-translate-y-full');
+    }
+    
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 </script>
