@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Location from "../components/Location.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<Layout
+  title="Contact & Devis | Marbrerie du Hainaut"
+  description="Contactez la Marbrerie du Hainaut pour toute demande de devis ou question. Située à Saint-Amand-les-Eaux, notre équipe est à votre écoute."
+>
+  <Navbar />
+
+  <main class="pt-20">
+    <!-- pt-20 to account for fixed navbar height (h-20) -->
+
+    <!-- Contact Hero -->
+    <section
+      class="relative bg-base-darker pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden"
+    >
+      <!-- Decorative lines -->
+      <svg
+        class="absolute inset-0 w-full h-full opacity-[0.05]"
+        viewBox="0 0 1200 400"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,200 Q300,150 600,220 T1200,180"
+          stroke="white"
+          stroke-width="2"
+          fill="none"></path>
+        <path
+          d="M0,100 Q400,80 700,150 T1200,100"
+          stroke="white"
+          stroke-width="1.2"
+          fill="none"></path>
+      </svg>
+      <div
+        class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center reveal"
+      >
+        <span
+          class="text-accent text-xs font-semibold tracking-[0.3em] uppercase mb-4 block"
+          >À votre écoute</span
+        >
+        <h1
+          class="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-text drop-shadow-md"
+        >
+          Contactez-<span class="text-accent-light">nous</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Main Contact Area -->
+    <section class="relative pb-24 sm:pb-32 bg-light-alt">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <ContactForm />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
