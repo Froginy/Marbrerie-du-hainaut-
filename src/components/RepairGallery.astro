@@ -87,7 +87,7 @@ const categories = [
         >
           <div class="relative bg-light-surface border border-border-light rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1">
             <!-- Image placeholder -->
-            <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-base-darker via-surface to-base-dark overflow-hidden">
+            <div class="relative w-full aspect-4/3 bg-linear-to-br from-base-darker via-surface to-base-dark overflow-hidden">
               <!-- Marble vein decoration -->
               <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 400 300" preserveAspectRatio="none">
                 <path d="M0,150 Q100,130 200,160 T400,140" stroke="white" stroke-width="1.5" fill="none" />
@@ -102,7 +102,7 @@ const categories = [
                 <span class="text-xs tracking-wider uppercase">Photo — {item.title}</span>
               </div>
               <!-- Hover overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+              <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
                 <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <span class="inline-block px-3 py-1 bg-accent/90 text-white text-[10px] tracking-wider uppercase rounded-full mb-2 font-medium">{item.category.replace("-", " ")}</span>
                   <h3 class="text-white font-heading text-lg font-semibold">{item.title}</h3>
@@ -128,7 +128,7 @@ const categories = [
 </section>
 
 <!-- Modal / Lightbox -->
-<div id="gallery-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+<div id="gallery-modal" class="fixed inset-0 z-100 hidden items-center justify-center">
   <!-- Backdrop -->
   <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
@@ -154,7 +154,7 @@ const categories = [
     </button>
 
     <!-- Image area -->
-    <div class="w-full aspect-[16/10] bg-gradient-to-br from-base-darker via-surface to-base-dark relative">
+    <div class="w-full aspect-16/10 bg-linear-to-br from-base-darker via-surface to-base-dark relative">
       <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 800 500" preserveAspectRatio="none">
         <path d="M0,250 Q200,220 400,270 T800,240" stroke="white" stroke-width="1.5" fill="none" />
         <path d="M0,150 Q300,120 500,180 T800,140" stroke="white" stroke-width="1" fill="none" />

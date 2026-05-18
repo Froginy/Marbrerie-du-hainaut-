@@ -62,21 +62,21 @@ const steps = [
     <section class="relative bg-base-darker pt-32 pb-24 overflow-hidden shadow-inner">
       <!-- Background -->
       <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-base-darker via-surface to-base-dark"></div>
+        <div class="absolute inset-0 bg-linear-to-br from-base-darker via-surface to-base-dark"></div>
         <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 1200 400" preserveAspectRatio="none">
           <path d="M0,200 Q300,150 600,220 T1200,180" stroke="white" stroke-width="2" fill="none" />
           <path d="M0,100 Q400,80 700,150 T1200,100" stroke="white" stroke-width="1.2" fill="none" />
           <path d="M0,300 Q350,280 650,330 T1200,290" stroke="white" stroke-width="1" fill="none" />
         </svg>
-        <div class="absolute inset-0 bg-gradient-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
+        <div class="absolute inset-0 bg-linear-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
       </div>
 
       <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center reveal">
         <!-- Decorative line -->
         <div class="mb-6 flex items-center justify-center gap-4">
-          <span class="block h-px w-12 bg-gradient-to-r from-transparent to-gold/50"></span>
+          <span class="block h-px w-12 bg-linear-to-r from-transparent to-gold/50"></span>
           <span class="text-gold text-xs font-medium tracking-[0.3em] uppercase font-body">Entretien & Restauration</span>
-          <span class="block h-px w-12 bg-gradient-to-l from-transparent to-gold/50"></span>
+          <span class="block h-px w-12 bg-linear-to-l from-transparent to-gold/50"></span>
         </div>
 
         <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-text drop-shadow-md">
@@ -125,7 +125,7 @@ const steps = [
           <!-- Image placeholder -->
           <div class="reveal" style="transition-delay: 0.2s">
             <div class="relative rounded-xl overflow-hidden shadow-2xl shadow-accent/10">
-              <div class="w-full h-[400px] sm:h-[480px] bg-gradient-to-br from-base-darker via-surface to-base-dark relative">
+              <div class="w-full h-[400px] sm:h-[480px] bg-linear-to-br from-base-darker via-surface to-base-dark relative">
                 <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 560 480" preserveAspectRatio="none">
                   <path d="M0,200 Q140,180 280,220 T560,200" stroke="white" stroke-width="1.5" fill="none" />
                   <path d="M0,350 Q200,330 400,370 T560,340" stroke="white" stroke-width="1" fill="none" />
@@ -164,7 +164,7 @@ const steps = [
             <div class="reveal group" style={`transition-delay: ${index * 0.1}s`}>
               <div class="h-full bg-light-surface border border-border-light rounded-xl p-6 sm:p-8 transition-all duration-500 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1 flex items-start gap-5">
                 <!-- Icon -->
-                <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white" set:html={service.icon} />
+                <div class="shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white" set:html={service.icon} />
 
                 <div>
                   <h3 class="font-heading text-lg sm:text-xl font-semibold text-dark-text mb-2 group-hover:text-accent transition-colors duration-300">{service.title}</h3>
@@ -200,7 +200,7 @@ const steps = [
         <!-- Steps -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           <!-- Connection line (desktop) -->
-          <div class="hidden lg:block absolute top-16 left-[15%] right-[15%] h-px bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20"></div>
+          <div class="hidden lg:block absolute top-16 left-[15%] right-[15%] h-px bg-linear-to-r from-accent/20 via-accent/40 to-accent/20"></div>
 
           {steps.map((step, index) => (
             <div class="reveal relative group" style={`transition-delay: ${index * 0.15}s`}>
@@ -211,7 +211,7 @@ const steps = [
                 </div>
 
                 <h3 class="font-heading text-xl font-semibold text-text mb-3">{step.title}</h3>
-                <p class="text-text-muted text-sm leading-relaxed flex-grow">{step.description}</p>
+                <p class="text-text-muted text-sm leading-relaxed grow">{step.description}</p>
               </div>
             </div>
           ))}

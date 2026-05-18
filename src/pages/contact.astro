@@ -20,7 +20,7 @@ import ContactForm from "../components/ContactForm.astro";
       <!-- Background style resembling homepage hero -->
       <div class="absolute inset-0">
         <!-- Gradient simulating dark stone -->
-        <div class="absolute inset-0 bg-gradient-to-br from-base-darker via-surface to-base-dark"></div>
+        <div class="absolute inset-0 bg-linear-to-br from-base-darker via-surface to-base-dark"></div>
         <!-- Marble vein decorative lines -->
         <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 1200 400" preserveAspectRatio="none">
           <path d="M0,200 Q300,150 600,220 T1200,180" stroke="white" stroke-width="2" fill="none" />
@@ -28,15 +28,15 @@ import ContactForm from "../components/ContactForm.astro";
           <path d="M0,300 Q350,280 650,330 T1200,290" stroke="white" stroke-width="1" fill="none" />
         </svg>
         <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
+        <div class="absolute inset-0 bg-linear-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
       </div>
 
       <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center reveal">
         <!-- Decorative line -->
         <div class="mb-6 flex items-center justify-center gap-4">
-          <span class="block h-px w-12 bg-gradient-to-r from-transparent to-gold/50"></span>
+          <span class="block h-px w-12 bg-linear-to-r from-transparent to-gold/50"></span>
           <span class="text-gold text-xs font-medium tracking-[0.3em] uppercase font-body">À votre écoute</span>
-          <span class="block h-px w-12 bg-gradient-to-l from-transparent to-gold/50"></span>
+          <span class="block h-px w-12 bg-linear-to-l from-transparent to-gold/50"></span>
         </div>
         
         <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-text drop-shadow-md">
