@@ -1,0 +1,262 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import RepairGallery from "../components/RepairGallery.astro";
+
+const repairServices = [
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>`,
+    title: "Nettoyage & Polissage",
+    description: "Élimination des mousses, lichens et salissures. Polissage du granit pour retrouver l'éclat d'origine de votre monument.",
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384-5.383a1.5 1.5 0 010-2.122l.354-.354a1.5 1.5 0 012.122 0L12 10.828l3.488-3.517a1.5 1.5 0 012.122 0l.354.354a1.5 1.5 0 010 2.122L12.58 15.17a.82.82 0 01-1.16 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>`,
+    title: "Remise à niveau",
+    description: "Correction des affaissements, remplacement des joints et stabilisation de la semelle pour assurer la longévité du monument.",
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" /><path stroke-linecap="round" stroke-linejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008z" /></svg>`,
+    title: "Réparation & Recollage",
+    description: "Reconstitution des pièces cassées, recollage de stèles fissurées et réparations structurelles avec des finitions invisibles.",
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>`,
+    title: "Gravure & Dorure",
+    description: "Ravalement et redorure des inscriptions, ajout de nouvelles gravures, restitution fidèle des ornements d'origine.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Diagnostic sur place",
+    description: "Notre équipe se déplace au cimetière pour évaluer l'état du monument et identifier les travaux nécessaires.",
+  },
+  {
+    number: "02",
+    title: "Devis détaillé gratuit",
+    description: "Nous établissons un devis transparent et personnalisé, détaillant chaque intervention prévue, sans engagement.",
+  },
+  {
+    number: "03",
+    title: "Intervention soignée",
+    description: "Nos artisans réalisent les travaux avec le plus grand soin, dans le respect du monument et du lieu de recueillement.",
+  },
+  {
+    number: "04",
+    title: "Résultat garanti",
+    description: "Nous vous informons de la fin des travaux. Le monument retrouve sa beauté et sa dignité pour les années à venir.",
+  },
+];
+---
+
+<Layout
+  title="Réparation de monument funéraire | Marbrerie du Hainaut"
+  description="Entretien et réparation de monuments funéraires : nettoyage, remise à niveau, recollage, gravure. Artisans marbriers à Saint-Amand-les-Eaux."
+>
+  <Navbar />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative bg-base-darker pt-32 pb-24 overflow-hidden shadow-inner">
+      <!-- Background -->
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-base-darker via-surface to-base-dark"></div>
+        <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 1200 400" preserveAspectRatio="none">
+          <path d="M0,200 Q300,150 600,220 T1200,180" stroke="white" stroke-width="2" fill="none" />
+          <path d="M0,100 Q400,80 700,150 T1200,100" stroke="white" stroke-width="1.2" fill="none" />
+          <path d="M0,300 Q350,280 650,330 T1200,290" stroke="white" stroke-width="1" fill="none" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center reveal">
+        <!-- Decorative line -->
+        <div class="mb-6 flex items-center justify-center gap-4">
+          <span class="block h-px w-12 bg-gradient-to-r from-transparent to-gold/50"></span>
+          <span class="text-gold text-xs font-medium tracking-[0.3em] uppercase font-body">Entretien & Restauration</span>
+          <span class="block h-px w-12 bg-gradient-to-l from-transparent to-gold/50"></span>
+        </div>
+
+        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-text drop-shadow-md">
+          Réparation de <span class="text-accent-light">monument</span>
+        </h1>
+        <p class="mt-6 text-text-muted max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+          Artisans et techniciens, nous prenons soin de vos monuments funéraires avec tout le respect et le savoir-faire qu'ils méritent.
+        </p>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="relative py-24 sm:py-32 bg-light-alt overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <!-- Text content -->
+          <div class="reveal">
+            <span class="text-accent text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">Notre engagement</span>
+            <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-text mb-6 leading-tight">
+              Des artisans au service de la <span class="text-accent">mémoire</span>
+            </h2>
+
+            <div class="space-y-4 mb-8">
+              <p class="text-dark-text-muted leading-relaxed">
+                Nous sommes des artisans, mais nous sommes également des techniciens. En plus de la conception, nous proposons <span class="text-dark-text font-semibold">l'entretien et la réparation</span> de vos monuments funéraires.
+              </p>
+              <p class="text-dark-text-muted leading-relaxed">
+                Puisqu'ils sont installés en dehors, dans un espace ouvert, ils ne sont bien évidemment pas à l'abri des éléments de dégradation comme la poussière, la terre et les intempéries. Et pourtant, tout comme vos sentiments, il est important de garder au chaud ce souvenir.
+              </p>
+              <p class="text-dark-text-muted leading-relaxed">
+                À cet effet, notre équipe peut <span class="text-dark-text font-semibold">nettoyer et si besoin réparer</span> les monuments funéraires de vos défunts proches. Le lieu de sépulture du défunt doit rester un endroit calme et beau, sobre et propre.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 group"
+            >
+              Demander un devis gratuit
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Image placeholder -->
+          <div class="reveal" style="transition-delay: 0.2s">
+            <div class="relative rounded-xl overflow-hidden shadow-2xl shadow-accent/10">
+              <div class="w-full h-[400px] sm:h-[480px] bg-gradient-to-br from-base-darker via-surface to-base-dark relative">
+                <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 560 480" preserveAspectRatio="none">
+                  <path d="M0,200 Q140,180 280,220 T560,200" stroke="white" stroke-width="1.5" fill="none" />
+                  <path d="M0,350 Q200,330 400,370 T560,340" stroke="white" stroke-width="1" fill="none" />
+                  <path d="M150,0 Q160,200 140,400 T160,480" stroke="white" stroke-width="0.8" fill="none" />
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-text-muted/50">
+                  <svg class="w-16 h-16 mb-3" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                  </svg>
+                  <span class="text-sm tracking-wider uppercase">Photo réparation</span>
+                  <span class="text-xs mt-1">560 × 480</span>
+                </div>
+              </div>
+              <div class="absolute -bottom-3 -right-3 w-28 h-28 border-b-2 border-r-2 border-gold/30 rounded-br-xl"></div>
+              <div class="absolute -top-3 -left-3 w-28 h-28 border-t-2 border-l-2 border-accent/30 rounded-tl-xl"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="relative py-24 sm:py-32 bg-light overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="text-center mb-16 reveal">
+          <span class="text-accent text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">Nos prestations</span>
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-text">
+            Des interventions <span class="text-accent">sur mesure</span>
+          </h2>
+        </div>
+
+        <!-- Services grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+          {repairServices.map((service, index) => (
+            <div class="reveal group" style={`transition-delay: ${index * 0.1}s`}>
+              <div class="h-full bg-light-surface border border-border-light rounded-xl p-6 sm:p-8 transition-all duration-500 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1 flex items-start gap-5">
+                <!-- Icon -->
+                <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white" set:html={service.icon} />
+
+                <div>
+                  <h3 class="font-heading text-lg sm:text-xl font-semibold text-dark-text mb-2 group-hover:text-accent transition-colors duration-300">{service.title}</h3>
+                  <p class="text-dark-text-muted text-sm leading-relaxed">{service.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Steps Section -->
+    <section class="relative py-24 sm:py-32 bg-base-darker overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0">
+        <svg class="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1200 600" preserveAspectRatio="none">
+          <path d="M0,300 Q300,250 600,320 T1200,280" stroke="white" stroke-width="2" fill="none" />
+          <path d="M0,150 Q400,120 700,200 T1200,160" stroke="white" stroke-width="1" fill="none" />
+          <path d="M0,450 Q350,420 650,480 T1200,440" stroke="white" stroke-width="1" fill="none" />
+        </svg>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="text-center mb-16 reveal">
+          <span class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">Comment ça marche</span>
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-text">
+            Un processus <span class="text-accent-light">simple et clair</span>
+          </h2>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <!-- Connection line (desktop) -->
+          <div class="hidden lg:block absolute top-16 left-[15%] right-[15%] h-px bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20"></div>
+
+          {steps.map((step, index) => (
+            <div class="reveal relative group" style={`transition-delay: ${index * 0.15}s`}>
+              <div class="relative bg-surface border border-border rounded-xl p-7 text-center transition-all duration-500 hover:bg-surface-hover hover:-translate-y-1 h-full flex flex-col">
+                <!-- Step number -->
+                <div class="relative mx-auto mb-6 w-14 h-14 rounded-full bg-accent/10 border-2 border-accent/30 flex items-center justify-center text-accent font-heading text-lg font-bold transition-colors duration-300 group-hover:bg-accent group-hover:text-white group-hover:border-accent z-10">
+                  {step.number}
+                </div>
+
+                <h3 class="font-heading text-xl font-semibold text-text mb-3">{step.title}</h3>
+                <p class="text-text-muted text-sm leading-relaxed flex-grow">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <RepairGallery />
+
+    <!-- CTA Section -->
+    <section class="relative py-20 sm:py-28 bg-light-alt overflow-hidden">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center reveal">
+        <span class="text-accent text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">Besoin d'une réparation ?</span>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-text mb-6">
+          Confiez-nous l'entretien de votre <span class="text-accent">monument</span>
+        </h2>
+        <p class="text-dark-text-muted max-w-2xl mx-auto leading-relaxed mb-10">
+          Notre équipe se déplace gratuitement pour évaluer l'état de votre monument et vous proposer un devis personnalisé, sans engagement. Contactez-nous dès aujourd'hui.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full max-w-md mx-auto sm:max-w-none">
+          <a
+            href="/contact"
+            id="repair-cta-contact"
+            class="inline-flex justify-center items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-white uppercase tracking-wider transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 w-full sm:w-auto"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contactez-nous
+          </a>
+          <a
+            href="tel:0362020950"
+            id="repair-cta-phone"
+            class="inline-flex justify-center items-center gap-2 rounded-sm border border-accent/40 px-8 py-3.5 text-sm font-semibold text-accent uppercase tracking-wider transition-all duration-300 hover:bg-accent/5 hover:border-accent hover:-translate-y-0.5 w-full sm:w-auto"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            03 62 02 09 50
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
