@@ -1,41 +1,29 @@
 ---
+import { Image } from "astro:assets";
+import imgRenov1 from "../assets/renovation/renovation-1.jpg";
+import imgRenov2 from "../assets/renovation/renovation-2.jpg";
+import imgRenov3 from "../assets/renovation/renovation-3.jpg";
+import imgRenov4 from "../assets/renovation/renovation-4.jpg";
+import imgRenov5 from "../assets/renovation/renovation-5.jpg";
+import imgRenov6 from "../assets/renovation/renovation-6.jpg";
+import imgRenov7 from "../assets/renovation/renovation-7.jpg";
+import imgRenov8 from "../assets/renovation/renovation-8.jpg";
+import imgRenov9 from "../assets/renovation/renovation-9.jpg";
+import imgRenov10 from "../assets/renovation/renovation-10.jpg";
+import imgRenov11 from "../assets/renovation/renovation-11.jpg";
+
 const galleryItems = [
-  {
-    id: 1,
-    title: "Restauration complète",
-    category: "restauration",
-    description: "Nettoyage en profondeur et polissage d'un monument en granit noir. Résultat : une surface brillante comme au premier jour.",
-  },
-  {
-    id: 2,
-    title: "Remise à niveau",
-    category: "remise-a-niveau",
-    description: "Remise à niveau d'une semelle affaissée et remplacement des joints détériorés par le gel.",
-  },
-  {
-    id: 3,
-    title: "Réparation de stèle",
-    category: "restauration",
-    description: "Recollage et reconstitution d'une stèle fissurée suite à un choc. Finition soignée et invisible.",
-  },
-  {
-    id: 4,
-    title: "Nettoyage monument",
-    category: "nettoyage",
-    description: "Traitement anti-mousse et nettoyage haute pression d'un monument en pierre calcaire.",
-  },
-  {
-    id: 5,
-    title: "Rejointoiement",
-    category: "remise-a-niveau",
-    description: "Remplacement complet des joints et étanchéité du caveau pour prévenir les infiltrations.",
-  },
-  {
-    id: 6,
-    title: "Ravalement de gravure",
-    category: "restauration",
-    description: "Redorure et ravalement des inscriptions gravées, restitution fidèle de l'original.",
-  },
+  { id: 1, title: "Nettoyage en profondeur", category: "nettoyage", description: "Élimination des mousses et lichens incrustés dans la pierre.", image: imgRenov1 },
+  { id: 2, title: "Rejointoiement des dalles", category: "remise-a-niveau", description: "Refection des joints pour assurer l'étanchéité et la stabilité.", image: imgRenov2 },
+  { id: 3, title: "Nettoyage professionnel", category: "nettoyage", description: "Passage au nettoyeur professionnel pour raviver les teintes d'origine.", image: imgRenov3 },
+  { id: 4, title: "Rénovation des marches", category: "restauration", description: "Restauration des marches d'accès et des abords.", image: imgRenov4 },
+  { id: 5, title: "Traitement protecteur", category: "nettoyage", description: "Application d'un traitement pour empêcher le retour de l'humidité.", image: imgRenov5 },
+  { id: 6, title: "Remplacement d'éléments", category: "restauration", description: "Changement de pièces de marbre endommagées par le gel.", image: imgRenov6 },
+  { id: 7, title: "Repolissage du granit", category: "restauration", description: "Polissage de la surface pour retrouver une finition lisse et brillante.", image: imgRenov7 },
+  { id: 8, title: "Remise à niveau", category: "remise-a-niveau", description: "Stabilisation du terrain et redressage des éléments affaissés.", image: imgRenov8 },
+  { id: 9, title: "Entretien du monument", category: "nettoyage", description: "Nettoyage complet de la sépulture et de ses ornements.", image: imgRenov9 },
+  { id: 10, title: "Restauration complète", category: "restauration", description: "Intervention lourde de restauration sur un aménagement détérioré.", image: imgRenov10 },
+  { id: 11, title: "Finitions et joints", category: "remise-a-niveau", description: "Application soignée des joints de finition hydrofuges.", image: imgRenov11 },
 ];
 
 const categories = [
@@ -83,24 +71,12 @@ const categories = [
           class="reveal gallery-item group cursor-pointer"
           data-category={item.category}
           data-index={index}
+          data-image-src={item.image.src}
           style={`transition-delay: ${index * 0.1}s`}
         >
           <div class="relative bg-light-surface border border-border-light rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1">
-            <!-- Image placeholder -->
-            <div class="relative w-full aspect-4/3 bg-linear-to-br from-base-darker via-surface to-base-dark overflow-hidden">
-              <!-- Marble vein decoration -->
-              <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 400 300" preserveAspectRatio="none">
-                <path d="M0,150 Q100,130 200,160 T400,140" stroke="white" stroke-width="1.5" fill="none" />
-                <path d="M0,80 Q150,60 300,100 T400,70" stroke="white" stroke-width="1" fill="none" />
-                <path d="M0,220 Q120,200 250,240 T400,210" stroke="white" stroke-width="0.8" fill="none" />
-              </svg>
-              <!-- Placeholder content -->
-              <div class="absolute inset-0 flex flex-col items-center justify-center text-text-muted/50">
-                <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                </svg>
-                <span class="text-xs tracking-wider uppercase">Photo — {item.title}</span>
-              </div>
+            <div class="relative w-full aspect-4/3 bg-base-dark overflow-hidden">
+              <Image src={item.image} alt={item.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <!-- Hover overlay -->
               <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
                 <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -154,17 +130,8 @@ const categories = [
     </button>
 
     <!-- Image area -->
-    <div class="w-full aspect-16/10 bg-linear-to-br from-base-darker via-surface to-base-dark relative">
-      <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 800 500" preserveAspectRatio="none">
-        <path d="M0,250 Q200,220 400,270 T800,240" stroke="white" stroke-width="1.5" fill="none" />
-        <path d="M0,150 Q300,120 500,180 T800,140" stroke="white" stroke-width="1" fill="none" />
-      </svg>
-      <div class="absolute inset-0 flex flex-col items-center justify-center text-text-muted/50">
-        <svg class="w-16 h-16 mb-3" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-        </svg>
-        <span id="modal-placeholder-text" class="text-sm tracking-wider uppercase">Photo placeholder</span>
-      </div>
+    <div class="w-full aspect-16/10 bg-base-dark relative">
+      <img id="modal-image" src="" alt="Photo en grand" class="absolute inset-0 w-full h-full object-contain" />
     </div>
 
     <!-- Info area -->
@@ -227,16 +194,14 @@ const categories = [
   const modalDescription = document.getElementById('modal-description');
   const modalCategory = document.getElementById('modal-category');
   const modalCounter = document.getElementById('modal-counter');
-  const modalPlaceholder = document.getElementById('modal-placeholder-text');
+  const modalImage = document.getElementById('modal-image');
 
-  const itemsData = [
-    { title: "Restauration complète", category: "restauration", description: "Nettoyage en profondeur et polissage d'un monument en granit noir. Résultat : une surface brillante comme au premier jour." },
-    { title: "Remise à niveau", category: "remise-a-niveau", description: "Remise à niveau d'une semelle affaissée et remplacement des joints détériorés par le gel." },
-    { title: "Réparation de stèle", category: "restauration", description: "Recollage et reconstitution d'une stèle fissurée suite à un choc. Finition soignée et invisible." },
-    { title: "Nettoyage monument", category: "nettoyage", description: "Traitement anti-mousse et nettoyage haute pression d'un monument en pierre calcaire." },
-    { title: "Rejointoiement", category: "remise-a-niveau", description: "Remplacement complet des joints et étanchéité du caveau pour prévenir les infiltrations." },
-    { title: "Ravalement de gravure", category: "restauration", description: "Redorure et ravalement des inscriptions gravées, restitution fidèle de l'original." },
-  ];
+  const itemsData = Array.from(galleryItems).map(item => ({
+    title: item.querySelector('h3')?.textContent || '',
+    category: item.getAttribute('data-category') || '',
+    description: item.querySelector('p')?.textContent || '',
+    imageSrc: item.getAttribute('data-image-src') || ''
+  }));
 
   let currentIndex = 0;
 
@@ -268,7 +233,7 @@ const categories = [
     if (modalDescription) modalDescription.textContent = item.description;
     if (modalCategory) modalCategory.textContent = item.category.replace('-', ' ');
     if (modalCounter) modalCounter.textContent = `${currentIndex + 1} / ${itemsData.length}`;
-    if (modalPlaceholder) modalPlaceholder.textContent = `Photo — ${item.title}`;
+    if (modalImage) (modalImage as HTMLImageElement).src = item.imageSrc;
   }
 
   function prevItem() {

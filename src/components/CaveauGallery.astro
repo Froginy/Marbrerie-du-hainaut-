@@ -1,48 +1,25 @@
 ---
+import { Image } from "astro:assets";
+import imgMonu1 from "../assets/monuments/monument-noir-1.jpg";
+import imgMonu2 from "../assets/monuments/monument-noir-2.jpg";
+import imgMonu3 from "../assets/monuments/monument-blanc.jpg";
+import imgMonu4 from "../assets/monuments/monument-noir-rose.jpg";
+import imgMonu5 from "../assets/monuments/monument-granit-rouge.jpg";
+import imgMonu6 from "../assets/monuments/monument-bicolore-rouge-noir.jpg";
+
 const galleryItems = [
-  {
-    id: 1,
-    title: "Monument classique granit",
-    category: "classique",
-    description: "Monument funéraire en granit gris classique avec stèle doucine et semelle.",
-  },
-  {
-    id: 2,
-    title: "Monument moderne",
-    category: "moderne",
-    description: "Conception épurée en granit noir fin absolu avec incrustations.",
-  },
-  {
-    id: 3,
-    title: "Caveau familial",
-    category: "caveau",
-    description: "Grand caveau familial avec habillage complet en granit massif.",
-  },
-  {
-    id: 4,
-    title: "Monument personnalisé",
-    category: "personnalise",
-    description: "Réalisation sur mesure avec stèle sculptée selon les souhaits de la famille.",
-  },
-  {
-    id: 5,
-    title: "Monument double",
-    category: "classique",
-    description: "Monument double pour concession large, finition polie brillante.",
-  },
-  {
-    id: 6,
-    title: "Création originale",
-    category: "moderne",
-    description: "Association de deux granits différents pour un rendu contemporain et unique.",
-  },
+  { id: 1, title: "Monument classique granit", category: "classique", description: "Monument funéraire en granit noir classique avec stèle doucine.", image: imgMonu1 },
+  { id: 2, title: "Monument moderne", category: "moderne", description: "Conception épurée en granit noir avec de beaux reflets.", image: imgMonu2 },
+  { id: 3, title: "Monument en pierre claire", category: "classique", description: "Grand monument classique en pierre blanche lumineuse.", image: imgMonu3 },
+  { id: 4, title: "Monument personnalisé", category: "personnalise", description: "Réalisation sur mesure avec stèle ornée d'une rose sculptée.", image: imgMonu4 },
+  { id: 5, title: "Monument en granit rouge", category: "classique", description: "Monument double en granit rouge, finition polie brillante.", image: imgMonu5 },
+  { id: 6, title: "Création bicolore", category: "moderne", description: "Association de granit rouge et noir pour un rendu contemporain.", image: imgMonu6 },
 ];
 
 const categories = [
   { key: "all", label: "Tout voir" },
   { key: "classique", label: "Classique" },
   { key: "moderne", label: "Moderne" },
-  { key: "caveau", label: "Caveau" },
   { key: "personnalise", label: "Personnalisé" },
 ];
 ---
@@ -84,21 +61,12 @@ const categories = [
           class="reveal gallery-item-caveau group cursor-pointer"
           data-category-caveau={item.category}
           data-index-caveau={index}
+          data-image-src={item.image.src}
           style={`transition-delay: ${index * 0.1}s`}
         >
           <div class="relative bg-light-surface border border-border-light rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1">
-            <!-- Image placeholder -->
-            <div class="relative w-full aspect-4/3 bg-linear-to-br from-base-darker via-surface to-base-dark overflow-hidden">
-              <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 400 300" preserveAspectRatio="none">
-                <path d="M0,150 Q100,130 200,160 T400,140" stroke="white" stroke-width="1.5" fill="none" />
-                <path d="M0,80 Q150,60 300,100 T400,70" stroke="white" stroke-width="1" fill="none" />
-              </svg>
-              <div class="absolute inset-0 flex flex-col items-center justify-center text-text-muted/50">
-                <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                </svg>
-                <span class="text-xs tracking-wider uppercase">Photo — {item.title}</span>
-              </div>
+            <div class="relative w-full aspect-4/3 bg-base-dark overflow-hidden">
+              <Image src={item.image} alt={item.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <!-- Hover overlay -->
               <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
                 <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -142,13 +110,8 @@ const categories = [
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
     </button>
-    <div class="w-full aspect-16/10 bg-linear-to-br from-base-darker via-surface to-base-dark relative">
-      <div class="absolute inset-0 flex flex-col items-center justify-center text-text-muted/50">
-        <svg class="w-16 h-16 mb-3" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-        </svg>
-        <span id="caveau-modal-placeholder-text" class="text-sm tracking-wider uppercase">Photo placeholder</span>
-      </div>
+    <div class="w-full aspect-16/10 bg-base-dark relative">
+      <img id="caveau-modal-image" src="" alt="Photo en grand" class="absolute inset-0 w-full h-full object-contain" />
     </div>
     <div class="p-6 sm:p-8">
       <div class="flex items-center gap-3 mb-3">
@@ -204,16 +167,14 @@ const categories = [
   const modalDescription = document.getElementById('caveau-modal-description');
   const modalCategory = document.getElementById('caveau-modal-category');
   const modalCounter = document.getElementById('caveau-modal-counter');
-  const modalPlaceholder = document.getElementById('caveau-modal-placeholder-text');
+  const modalImage = document.getElementById('caveau-modal-image');
 
-  const itemsData = [
-    { title: "Monument classique granit", category: "classique", description: "Monument funéraire en granit gris classique avec stèle doucine et semelle." },
-    { title: "Monument moderne", category: "moderne", description: "Conception épurée en granit noir fin absolu avec incrustations." },
-    { title: "Caveau familial", category: "caveau", description: "Grand caveau familial avec habillage complet en granit massif." },
-    { title: "Monument personnalisé", category: "personnalise", description: "Réalisation sur mesure avec stèle sculptée selon les souhaits de la famille." },
-    { title: "Monument double", category: "classique", description: "Monument double pour concession large, finition polie brillante." },
-    { title: "Création originale", category: "moderne", description: "Association de deux granits différents pour un rendu contemporain et unique." },
-  ];
+  const itemsData = Array.from(galleryItems).map(item => ({
+    title: item.querySelector('h3')?.textContent || '',
+    category: item.getAttribute('data-category-caveau') || '',
+    description: item.querySelector('p')?.textContent || '',
+    imageSrc: item.getAttribute('data-image-src') || ''
+  }));
 
   let currentIndex = 0;
 
@@ -245,7 +206,7 @@ const categories = [
     if (modalDescription) modalDescription.textContent = item.description;
     if (modalCategory) modalCategory.textContent = item.category;
     if (modalCounter) modalCounter.textContent = `${currentIndex + 1} / ${itemsData.length}`;
-    if (modalPlaceholder) modalPlaceholder.textContent = `Photo — ${item.title}`;
+    if (modalImage) (modalImage as HTMLImageElement).src = item.imageSrc;
   }
 
   galleryItems.forEach((item) => {

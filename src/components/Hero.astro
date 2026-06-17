@@ -1,30 +1,35 @@
 ---
+import vid1 from "../assets/video_hero/1DE57C45-802B-4D02-AD21-48968B1CE21D.MP4?url";
+import vid2 from "../assets/video_hero/536673A2-9437-474D-B64F-B2A4449D2386.MP4?url";
+import vid3 from "../assets/video_hero/5ECE7BD9-1ACE-4543-87A2-D3633A68335A.MP4?url";
+import vid4 from "../assets/video_hero/9577F71E-2798-4C5D-AB57-B84A5B6ED9DC.MP4?url";
+import vid5 from "../assets/video_hero/E1710EFE-FD07-47E7-B9B2-B7E75828FA32.MP4?url";
+
+const videos = [vid1, vid2, vid3, vid4, vid5];
 ---
 
 <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-24">
-  <!-- Background image placeholder -->
-  <div class="absolute inset-0 bg-base-darker">
-    <!-- Placeholder gradient simulating a dark stone/marble photo -->
-    <div class="absolute inset-0 bg-linear-to-br from-base-darker via-surface to-base-dark"></div>
-    <!-- Marble vein decorative lines -->
-    <svg class="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 1200 800" preserveAspectRatio="none">
-      <path d="M0,400 Q300,350 600,420 T1200,380" stroke="white" stroke-width="2" fill="none" />
-      <path d="M0,200 Q400,180 700,250 T1200,200" stroke="white" stroke-width="1.2" fill="none" />
-      <path d="M0,600 Q350,580 650,630 T1200,590" stroke="white" stroke-width="1" fill="none" />
-      <path d="M200,0 Q220,300 180,500 T220,800" stroke="white" stroke-width="0.8" fill="none" />
-      <path d="M800,0 Q780,250 820,450 T790,800" stroke="white" stroke-width="1.2" fill="none" />
-      <path d="M500,0 Q520,200 480,400 T520,800" stroke="white" stroke-width="0.6" fill="none" />
-    </svg>
+  <!-- Background Video Carousel -->
+  <div class="absolute inset-0 bg-base-darker overflow-hidden" id="hero-video-container">
+    {videos.map((vid, index) => (
+      <video
+        src={vid}
+        class={`hero-bg-video absolute inset-0 w-full h-full object-cover transition-opacity duration-2000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+        autoplay={index === 0}
+        muted
+        playsinline
+        preload={index === 0 || index === 1 ? "auto" : "metadata"}
+        data-index={index}
+      ></video>
+    ))}
+    
     <!-- Dark overlay for readability -->
-    <div class="absolute inset-0 bg-linear-to-b from-base-darker/60 via-transparent to-base-darker/80"></div>
-    <!-- Placeholder indicator -->
-    <div class="absolute top-24 right-6 bg-base-dark/50 backdrop-blur-sm rounded px-3 py-1.5 border border-border z-20">
-      <span class="text-text-muted text-xs tracking-wider uppercase">Image de fond — 1920 × 1080</span>
-    </div>
+    <div class="absolute inset-0 bg-black/50 z-20"></div>
+    <div class="absolute inset-0 bg-linear-to-b from-base-darker/90 via-transparent to-base-darker/90 z-20"></div>
   </div>
 
   <!-- Content (above 3D) -->
-  <div class="relative z-10 mx-auto max-w-4xl px-4 text-center pointer-events-none">
+  <div class="relative z-30 mx-auto max-w-4xl px-4 text-center pointer-events-none">
     <!-- Decorative line -->
     <div class="mb-8 flex items-center justify-center gap-4">
       <span class="block h-px w-16 bg-linear-to-r from-transparent to-gold/50"></span>
@@ -59,7 +64,7 @@
         Contactez-nous
       </a>
       <a
-        href="/conception-3d"
+        href="https://configurateur.famille.gpggranit.com/famille/CA104234?utm_medium=MARBRERIE%20DU%20HAINAUT&utm_source=c-f" target="_blank" rel="noopener noreferrer"
         id="hero-cta-configurateur"
         class="inline-flex justify-center items-center gap-2 rounded-sm border border-text/30 px-8 py-3.5 text-sm font-semibold text-text uppercase tracking-wider transition-all duration-300 hover:bg-text/10 hover:border-text/60 hover:-translate-y-0.5 w-full sm:w-auto"
       >
@@ -72,7 +77,7 @@
   </div>
 
   <!-- Scroll indicator (hidden on very short screens to prevent overlap) -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce z-10 hidden sm:flex landscape:hidden">
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 animate-bounce z-30 landscape:hidden">
     <span class="text-text-muted text-xs tracking-widest uppercase drop-shadow-md">Découvrir</span>
     <svg class="w-5 h-5 text-gold/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -80,3 +85,35 @@
   </div>
 
 </section>
+
+<script>
+  const videos = document.querySelectorAll('.hero-bg-video') as NodeListOf<HTMLVideoElement>;
+  let currentIndex = 0;
+
+  if (videos.length > 1) {
+    videos.forEach((video) => {
+      video.addEventListener('ended', () => {
+        // Fade out current
+        video.classList.remove('opacity-100', 'z-10');
+        video.classList.add('opacity-0', 'z-0');
+        
+        // Next video
+        currentIndex = (currentIndex + 1) % videos.length;
+        const nextVideo = videos[currentIndex];
+        
+        // Reset playback and fade in next
+        nextVideo.currentTime = 0;
+        nextVideo.classList.remove('opacity-0', 'z-0');
+        nextVideo.classList.add('opacity-100', 'z-10');
+        
+        // Preload the video after the next one to ensure smooth transition
+        const preloadIndex = (currentIndex + 1) % videos.length;
+        videos[preloadIndex].preload = "auto";
+
+        nextVideo.play().catch(e => console.log('Autoplay prevented:', e));
+      });
+    });
+  } else if (videos.length === 1) {
+    videos[0].loop = true;
+  }
+</script>

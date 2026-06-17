@@ -1,6 +1,6 @@
 # 🪦 Site Vitrine - Marbrerie du Hainaut
 
-Ce dépôt contient le code source du site vitrine de la **Marbrerie du Hainaut**, développé dans le cadre de mon stage de 2ème année d'IUT. 
+Ce dépôt contient le code source du site vitrine de la **Marbrerie du Hainaut**, développé dans le cadre de mon stage de 2ème année d'IUT.
 
 Le site a pour objectif de présenter les différents services de marbrerie funéraire (création de monuments funéraires, cavurnes, pose de caveaux, et services de rénovation/réparation) avec une expérience utilisateur moderne, rapide et esthétique.
 
@@ -53,36 +53,48 @@ Voici l'organisation des fichiers clés du projet :
 Suivez ces étapes simples pour faire fonctionner le site localement :
 
 ### 1. Prérequis
-Assurez-vous que **Node.js** (version `>= 22.12.0` recommandée) est installé sur votre machine. 
+
+Assurez-vous que **Node.js** (version `>= 22.12.0` recommandée) est installé sur votre machine.
 Vous pouvez le télécharger sur [nodejs.org](https://nodejs.org/).
 
 ### 2. Cloner le dépôt
+
 Récupérez le projet depuis GitHub :
+
 ```bash
 git clone <URL_DU_DEPOT_GITHUB>
 cd marbrerie_du_hainaut
 ```
 
 ### 3. Installer les dépendances
+
 Installez les bibliothèques et modules nécessaires à l'aide de npm :
+
 ```bash
 npm install
 ```
 
 ### 4. Lancer le serveur de développement
+
 Démarrez le serveur local pour visualiser et modifier le site en temps réel :
+
 ```bash
 npm run dev
 ```
+
 Une fois la commande exécutée, ouvrez votre navigateur et accédez à l'adresse suivante :  
 👉 **[http://localhost:4321](http://localhost:4321)**
 
 ### 5. Compiler pour la production (Optionnel)
+
 Pour générer les fichiers HTML/CSS statiques optimisés (distribuables) :
+
 ```bash
 npm run build
 ```
+
 Les fichiers générés se trouveront dans le dossier `/dist/`. Pour tester ce build de production localement :
+
 ```bash
 npm run preview
 ```
