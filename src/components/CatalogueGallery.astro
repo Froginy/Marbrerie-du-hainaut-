@@ -8,21 +8,39 @@ import imgMonu5 from "../assets/monuments/monument-bicolore-rouge-noir.jpg";
 import imgMonu6 from "../assets/monuments/monument-granit-rouge.jpg";
 import imgMonu7 from "../assets/monuments/monument-noir-liseret-rouge.jpg";
 
+import imgCavurne1 from "../assets/cavurnes/ensemble-cavurnes-tiroirs.jpg";
+import imgCavurne2 from "../assets/cavurnes/cavurne-gris-rose.jpg";
+import imgCavurne3 from "../assets/cavurnes/cavurne-noir-moto.jpg";
+import imgCavurne4 from "../assets/cavurnes/cavurne-noir-mat.jpg";
+import imgCavurne5 from "../assets/cavurnes/cavurne-noir-paysage.jpg";
+import imgCavurne6 from "../assets/cavurnes/cavurne-rouge-1.jpg";
+import imgCavurne7 from "../assets/cavurnes/cavurne-rouge-2.jpg";
+import imgCavurne8 from "../assets/cavurnes/cavurne-rouge-3.jpg";
+import imgCavurne9 from "../assets/cavurnes/cavurne-rouge-4.jpg";
+
 const galleryItems = [
-  { id: 1, title: "Monument en pierre blanche", category: "classique", description: "Sépulture classique aux lignes épurées et lumineuses.", image: imgMonu1 },
-  { id: 2, title: "Monument en granit noir", category: "classique", description: "Design intemporel et élégant en granit noir massif.", image: imgMonu2 },
-  { id: 3, title: "Monument noir contemporain", category: "contemporain", description: "Lignes modernes avec un superbe contraste de lumière.", image: imgMonu3 },
-  { id: 4, title: "Monument noir avec ornement", category: "personnalise", description: "Stèle noire agrémentée d'une magnifique rose sculptée.", image: imgMonu4 },
-  { id: 5, title: "Monument bicolore", category: "contemporain", description: "Création originale et audacieuse associant le granit rouge et noir.", image: imgMonu5 },
-  { id: 6, title: "Monument en granit rouge", category: "classique", description: "Sépulture traditionnelle aux finitions soignées en granit rouge.", image: imgMonu6 },
-  { id: 7, title: "Monument avec liseré", category: "contemporain", description: "Design moderne et élégant souligné par un fin liseré rouge.", image: imgMonu7 },
+  { id: 1, title: "Monument en pierre blanche", type: "monument", category: "classique", description: "Sépulture classique aux lignes épurées et lumineuses.", image: imgMonu1 },
+  { id: 2, title: "Monument en granit noir", type: "monument", category: "classique", description: "Design intemporel et élégant en granit noir massif.", image: imgMonu2 },
+  { id: 3, title: "Monument noir contemporain", type: "monument", category: "contemporain", description: "Lignes modernes avec un superbe contraste de lumière.", image: imgMonu3 },
+  { id: 4, title: "Monument noir avec ornement", type: "monument", category: "personnalise", description: "Stèle noire agrémentée d'une magnifique rose sculptée.", image: imgMonu4 },
+  { id: 5, title: "Monument bicolore", type: "monument", category: "contemporain", description: "Création originale et audacieuse associant le granit rouge et noir.", image: imgMonu5 },
+  { id: 6, title: "Monument en granit rouge", type: "monument", category: "classique", description: "Sépulture traditionnelle aux finitions soignées en granit rouge.", image: imgMonu6 },
+  { id: 7, title: "Monument avec liseré", type: "monument", category: "contemporain", description: "Design moderne et élégant souligné par un fin liseré rouge.", image: imgMonu7 },
+  { id: 8, title: "Ensemble de cavurnes", type: "cavurne", category: "classique", description: "Aménagement complet avec tiroirs cinéraires.", image: imgCavurne1 },
+  { id: 9, title: "Cavurne en granit gris", type: "cavurne", category: "personnalise", description: "Monument cinéraire avec gravure florale d'une rose.", image: imgCavurne2 },
+  { id: 10, title: "Cavurne personnalisée", type: "cavurne", category: "personnalise", description: "Stèle noire avec gravure sur mesure (moto).", image: imgCavurne3 },
+  { id: 11, title: "Cavurne noir mat", type: "cavurne", category: "moderne", description: "Design sobre et élégant en finition noire mate.", image: imgCavurne4 },
+  { id: 12, title: "Cavurne avec paysage", type: "cavurne", category: "personnalise", description: "Monument noir orné d'une belle gravure de coucher de soleil.", image: imgCavurne5 },
+  { id: 13, title: "Cavurne en granit rouge", type: "cavurne", category: "classique", description: "Monument cinéraire classique et robuste en granit rouge.", image: imgCavurne6 },
+  { id: 14, title: "Cavurne rouge épurée", type: "cavurne", category: "classique", description: "Design simple et intemporel en granit rouge.", image: imgCavurne7 },
+  { id: 15, title: "Cavurne avec jardinière", type: "cavurne", category: "classique", description: "Monument rouge intégrant un espace de recueillement et des vases.", image: imgCavurne8 },
+  { id: 16, title: "Cavurne rouge sculptée", type: "cavurne", category: "classique", description: "Stèle rouge avec une forme travaillée et harmonieuse.", image: imgCavurne9 },
 ];
 
 const categories = [
   { key: "all", label: "Tout le catalogue" },
-  { key: "classique", label: "Classique" },
-  { key: "contemporain", label: "Contemporain" },
-  { key: "personnalise", label: "Personnalisé" },
+  { key: "monument", label: "Monuments" },
+  { key: "cavurne", label: "Cavurnes" },
 ];
 ---
 
@@ -50,7 +68,7 @@ const categories = [
       {galleryItems.map((item, index) => (
         <div
           class="reveal gallery-item-catalogue group cursor-pointer"
-          data-category-catalogue={item.category}
+          data-category-catalogue={item.type}
           data-index-catalogue={index}
           data-image-src={item.image.src}
           style={`transition-delay: ${(index % 3) * 0.1}s`}
@@ -61,7 +79,7 @@ const categories = [
               <!-- Hover overlay -->
               <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
                 <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span class="inline-block px-3 py-1 bg-accent/90 text-white text-[10px] tracking-wider uppercase rounded-full mb-2 font-medium">{item.category.replace("-", " ")}</span>
+                  <span class="inline-block px-3 py-1 bg-accent/90 text-white text-[10px] tracking-wider uppercase rounded-full mb-2 font-medium">{item.type}</span>
                   <h3 class="text-white font-heading text-lg font-semibold">{item.title}</h3>
                 </div>
               </div>
